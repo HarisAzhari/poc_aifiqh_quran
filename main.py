@@ -66,20 +66,12 @@ def get_quran_response(query):
         enhanced_query = f"""
         Search site:quran.com for information about: {query}
         
-        Please provide a comprehensive Islamic response that includes:
-        1. Clear reasoning and explanation from Islamic perspective
-        2. Relevant Ayat (verses) from the Quran with proper citation (Surah name, chapter:verse)
-        3. For EVERY Quranic verse mentioned, provide BOTH:
-           - The original Arabic text (in Arabic script)
-           - The English translation
-           - Format like this: **Arabic:** [Arabic text] | **Translation:** [English translation]
-        4. Context and interpretation of the verses
-        5. Direct links to quran.com pages where applicable
-        6. Any additional Islamic guidance or scholarly interpretation
+        Provide Islamic response with:
+        - Arabic verse first, then English translation
+        - Quran.com URL links
+        - Brief explanation from Islamic perspective
         
-        CRITICAL: When citing Quranic verses, ALWAYS include both the Arabic original text and English translation side by side. This is essential for proper Islamic scholarship and respect for the Quran.
-        
-        Format the response in a clear, respectful manner suitable for someone seeking Islamic knowledge.
+        Format: **Arabic:** [text] **Translation:** [text] **Link:** [quran.com URL]
         """
         
         search_client = genai.Client(api_key=Config.GEMINI_API_KEY)
